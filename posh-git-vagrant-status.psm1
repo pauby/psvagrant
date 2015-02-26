@@ -1,10 +1,13 @@
+if (Get-Module posh-git-vagrant-status) { return }
 if (Get-Module posh-git) { return }
+if (Get-Module vagrant-status) { return }
 
 Push-Location $psScriptRoot
 .\CheckVersion.ps1 > $null
 
 . .\Utils.ps1
 . .\GitUtils.ps1
+. .\VagrantUtils.ps1
 . .\GitPrompt.ps1
 . .\GitTabExpansion.ps1
 . .\TortoiseGit.ps1
@@ -23,8 +26,8 @@ Export-ModuleMember `
         'Invoke-NullCoalescing',
         'Write-GitStatus',
         'Write-Prompt',
-        'Get-GitStatus', 
-        'Enable-GitColors', 
+        'Get-GitStatus',
+        'Enable-GitColors',
         'Get-GitDirectory',
         'TabExpansion',
         'Get-AliasPattern',
@@ -34,6 +37,7 @@ Export-ModuleMember `
         'Add-SshKey',
         'Get-SshPath',
         'Update-AllBranches',
-        'tgit')
-
-
+        'tgit',
+        'Get-VagrantFile',
+        'Write-VagrantStatus',
+        'Write-VagrantStatusVS')

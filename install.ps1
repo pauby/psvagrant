@@ -1,7 +1,7 @@
 param([switch]$WhatIf = $false)
 
 if($PSVersionTable.PSVersion.Major -lt 2) {
-    Write-Warning "posh-git requires PowerShell 2.0 or better; you have version $($Host.Version)."
+    Write-Warning "posh-git-vagrant-status requires PowerShell 2.0 or better; you have version $($Host.Version)."
     return
 }
 
@@ -36,7 +36,7 @@ function Get-FileEncoding($Path) {
     }
 }
 
-$profileLine = ". '$installDir\profile.example.ps1'"
+$profileLine = ". '$installDir\profile.base.ps1'"
 if(Select-String -Path $PROFILE -Pattern $profileLine -Quiet -SimpleMatch) {
     Write-Host "It seems posh-git is already installed..."
     return
@@ -51,5 +51,4 @@ $profileLine
 "@ | Out-File $PROFILE -Append -WhatIf:$WhatIf -Encoding (Get-FileEncoding $PROFILE)
 
 Write-Host 'posh-git sucessfully installed!'
-Write-Host 'Please reload your profile for the changes to take effect:'
-Write-Host '    . $PROFILE'
+Write-Host 'Please reload your profile for the changes to take effect'

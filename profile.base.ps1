@@ -1,12 +1,7 @@
 Push-Location (Split-Path -Path $MyInvocation.MyCommand.Definition -Parent)
 
-# Load posh-git module from current directory
-Import-Module .\posh-git
-
-# If module is installed in a default location ($env:PSModulePath),
-# use this instead (see about_Modules for more information):
-# Import-Module posh-git
-
+# Load posh-git-vagrant-status module from current directory
+Import-Module .\posh-git-vagrant-status
 
 # Set up a simple prompt, adding the git prompt parts inside git repos
 function global:prompt {
@@ -18,7 +13,10 @@ function global:prompt {
     Write-Host($pwd.ProviderPath) -nonewline
 
     Write-VcsStatus
-
+    #
+    # Vagrant Status
+    #
+    Write-VagrantStatus
     $global:LASTEXITCODE = $realLASTEXITCODE
     return "> "
 }
