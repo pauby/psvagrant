@@ -29,8 +29,7 @@ A set of PowerShell scripts which provide Git/PowerShell integration and provide
 Usage
 -----
 
-See `profile.example.ps1` as to how you can integrate the tab completion and/or git prompt into your own profile.
-Prompt formatting, among other things, can be customized using `$GitPromptSettings`, `$GitTabSettings` and `$TortoiseGitSettings`.
+See [posh-git](https://github.com/dahlbyk/posh-git) for more information on the usage of tab completion and its setup in `profile.base.ps1`
 
 Note on performance: displaying file status in the git prompt for a very large repo can be prohibitively slow. Rather than turn off file status entirely, you can disable it on a repo-by-repo basis by adding individual repository paths to $GitPromptSettings.RepositoriesInWhichToDisableFileStatus.
 
