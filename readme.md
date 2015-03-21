@@ -6,7 +6,19 @@ A set of PowerShell scripts which provide Git/PowerShell integration and provide
    The prompt within Git repositories can show the current branch and the state of files (additions, modifications, deletions) within.
 
 ### Prompt for Vagrant folders
-   The prompt is defined in the profile.base.ps1 which will output a working directory as well as a basic vagrant status indicator.
+   The prompt is defined in the profile.base.ps1 which will output a working directory as well as a simple/detailed vagrant status indicator depending on your choice. profile.base.ps1 has two options which can be commented in or out. Don't leave both out or in.
+
+#### Detailed
+
+   A basic example layout of this status is [D:0 R:1].
+
+   The D(own) or 'poweroff/aborted in vagrant status' collects the number of machines for the current directory (vagrant environment) that are in that state. This will be colored in gray
+
+   The R(unning) or 'running in vagrant status' collects the number of machines for the current directory (vagrant environment) that are in that state. This will be colored in green
+
+   If there is a vagrantfile but no (D)own or (R)unning aka 'not created in vagrant status' machines you will see [-] in grey. This is to convey that there is a dormant vagrant environment in the current directory.
+
+#### Simple
 
    If there is an active Vagrant machine(s) you will see [^] the ^ is colorized in green. If there is a vagrantfile and/or folder but no Vagrant machine(s) active you will see [-].
 
@@ -26,19 +38,11 @@ The Vagrant portion of this prompt was originally powered by Vagrant's "Vagrant 
 
 ### Installing
 
-0. Verify you have PowerShell 2.0 or better with $PSVersionTable.PSVersion
-
-1. Verify execution of scripts is allowed with `Get-ExecutionPolicy` (should be `RemoteSigned` or `Unrestricted`). If scripts are not enabled, run PowerShell as Administrator and call `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Confirm`.
-
-2. Verify that `git` can be run from PowerShell.
-   If the command is not found, you will need to add a git alias or add `%ProgramFiles(x86)%\Git\cmd`
-   (or `%ProgramFiles%\Git\cmd` if you're still on 32-bit) to your PATH environment variable.
-
-3. Clone the posh-git-vagrant-status repository to your local machine.
-
-4. From the posh-git-vagrant-status repository directory, run `.\install.ps1`.
-
-5. Enjoy!
+1. Clone this repo
+2. In PowerShell make sure that your ExecutionPolicy is Unrestricted
+  * Get-ExecutionPolicy will show you current ExecutionPolicy.
+  * Set-ExecutionPolicy Unrestricted will set your ExecutionPolicy to Unrestricted.
+3. Run install.ps1 to install to your profile
 
 
 ### Contributing

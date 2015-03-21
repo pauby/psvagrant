@@ -50,5 +50,5 @@ $profileLine
 
 "@ | Out-File $PROFILE -Append -WhatIf:$WhatIf -Encoding (Get-FileEncoding $PROFILE)
 
-Write-Host 'posh-git sucessfully installed!'
+Write-Host 'posh-git-vagrant-status sucessfully installed!'
 Write-Host 'Please reload your profile for the changes to take effect'

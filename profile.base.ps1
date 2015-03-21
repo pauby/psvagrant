@@ -14,9 +14,19 @@ function global:prompt {
 
     Write-VcsStatus
     #
-    # Vagrant Status
+    # Vagrant Status:
     #
-    Write-VagrantStatus
+    # Comment out/in which ever style of status you would like dont leave both
+    # commented in or out.
+    #
+    # Examples:
+    #
+    # Simple: [-] [^]
+    # Detailed: [-] [D:0 R:1]
+    #
+    #Write-VagrantStatusSimple
+    Write-VagrantStatusDetailed
+
     $global:LASTEXITCODE = $realLASTEXITCODE
     return "> "
 }

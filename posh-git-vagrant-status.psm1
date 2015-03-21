@@ -39,5 +39,7 @@ Export-ModuleMember `
         'Update-AllBranches',
         'tgit',
         'Get-VagrantFile',
-        'Write-VagrantStatus',
-        'Write-VagrantStatusVS')
+        'Get-VagrantDir',
+        'Get-VagrantEnvIndex',
+        'Write-VagrantStatusSimple',
+        'Write-VagrantStatusDetailed')
