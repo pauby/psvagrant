@@ -1,6 +1,6 @@
 ##posh-git-vagrant-status
 
-A set of PowerShell scripts which provide Git/PowerShell integration and provide the basic status of the vagrant machines in the current directory. This is a merge of the [posh-git](https://github.com/dahlbyk/posh-git) and [vagrant-status](https://github.com/n00bworks/vagrant-status) repositories
+A set of PowerShell scripts which provide Git/PowerShell integration and provide the simple or detailed status of the vagrant machines in the current directory. This is a merge of the [posh-git](https://github.com/dahlbyk/posh-git) and [vagrant-status](https://github.com/n00bworks/vagrant-status) repositories
 
 ### Prompt for Git repositories and Vagrant status
    The prompt within Git repositories can show the current branch and the state of files (additions, modifications, deletions) within.
