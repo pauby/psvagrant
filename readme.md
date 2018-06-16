@@ -1,3 +1,7 @@
+# PSVagrant
+
+This is a fork of https://github.com/muteldar/posh-git-vagrant-status
+
 ##posh-git-vagrant-status
 
 A set of PowerShell scripts which provide Git/PowerShell integration and provide the simple or detailed status of the vagrant machines in the current directory. This is a merge of the [posh-git](https://github.com/dahlbyk/posh-git) and [vagrant-status](https://github.com/n00bworks/vagrant-status) repositories
