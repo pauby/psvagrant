@@ -38,9 +38,9 @@ Install-Module -Name PSVagrant
 
 ## TODO
 
-[ ] Add configuration of what is displayed just like in Posh-Git
-[ ] Reformat code, add help and comments
-[ ] Create Pester tests
+- [ ] Add configuration of what is displayed just like in Posh-Git;
+- [ ] Reformat code, add help and comments;
+- [ ] Create Pester tests;
 
 ## Contributing
 
