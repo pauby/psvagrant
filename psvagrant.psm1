@@ -81,7 +81,21 @@ function Write-VagrantStatusSimple {
 
 function Write-VagrantStatusDetailed {
     $vagrantFolder = Get-VagrantDir
-    $vagrantEnvJson = Get-Content(Get-VagrantEnvIndex -Raw) | ConvertFrom-Json
+    $index = Get-VagrantEnvIndex -Raw
+    if (@($index).count -eq 0) {
+        return
+    }
+
+    try {
+        $vagrantEnvJson = Get-Content(Get-VagrantEnvIndex -Raw) | ConvertFrom-Json
+    }
+    catch {
+        Write-Host '[' -NoNewline
+        Write-Host "!!!" -ForegroundColor Red -NoNewline
+        Write-Host ']' -NoNewline
+        return
+    }
+    
     $machines = @()
     $d = 0
     $r = 0
