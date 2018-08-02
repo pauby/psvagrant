@@ -1,3 +1,6 @@
+## v0.2.1 2 August 2018
+* Added display of saved Vagrant machines (using ~# where # is the number of machines in a saved state)
+
 ## v0.2.0 13 July 2018
 * Previous versions took the original module and just updated it. This release see a complete rewrite of the code and removal of a lot of it. We are left with four functions and some of it has no documentation which will come. If you want to get the details into the prompt use `Write-VagStatus`
 
